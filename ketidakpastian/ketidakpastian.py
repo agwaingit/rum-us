@@ -1,45 +1,52 @@
 import math
+import statistics
 
-# Rumus delta_x
-def ketidakpastian_absolut (data):
-    #Jumlah data N
+
+def hitung_ketidakpastian(data: list[float]) -> tuple[float, float, float]:
+    """
+    Menghitung ketidakpastian absolut, rata-rata, dan ketidakpastian relatif
+    dari serangkaian data pengukuran.
+
+    Args:
+        data: Sebuah list berisi angka (float atau int) dari data pengukuran.
+
+    Returns:
+        Sebuah tuple berisi:
+        - Ketidakpastian absolut (standar deviasi dari rata-rata).
+        - Rata-rata dari data.
+        - Ketidakpastian relatif.
+    """
     N = len(data)
+    if N < 2:
+        raise ValueError("Perhitungan ketidakpastian memerlukan setidaknya dua data poin.")
 
-    #xi data ke-i, i adalah 1 sampai N: data[i]
-    #xi2 data ke-i dikuadratkan, data[i]**2 
+    # Menghitung rata-rata (mean) dari data.
+    rata_rata = statistics.mean(data)
 
-    #Penjumlahan dari data atau xi
-    sum_x = sum(data)
+    # Menghitung standar deviasi sampel (s).
+    # ddof=1 digunakan untuk standar deviasi sampel (pembagi N-1).
+    standar_deviasi = statistics.stdev(data)
 
-    #Penjumlahan dari data dikuadratkan atau xi2
-    sum_x2 = sum(x**2 for x in data)
+    # Menghitung ketidakpastian absolut (Δx), yaitu standar deviasi dari rata-rata.
+    # Rumus: Δx = s / sqrt(N)
+    ketidakpastian_absolut = standar_deviasi / math.sqrt(N)
 
-    # Rumusnya berjalan seperti ini:
-    pembilang = N * sum_x2 - (sum_x)**2
-    penyebut = N - 1
-    hasil = 1 / math.sqrt(N) * math.sqrt(pembilang / penyebut)
-    return hasil
+    # Menghitung ketidakpastian relatif.
+    # Hindari pembagian dengan nol jika rata-rata adalah 0.
+    ketidakpastian_relatif = (
+        ketidakpastian_absolut / rata_rata if rata_rata != 0 else float("inf")
+    )
 
-def ketidakpastian_relatif(data):
-    N = len(data)
+    return ketidakpastian_absolut, rata_rata, ketidakpastian_relatif
 
-    # Rata-rata data
-    rerata_x = sum(data) / N
-
-    # Ketidakpastian absolut
-    delta_x = ketidakpastian_absolut(data)
-
-    # delta_x dibagi dengan rata-rata data untuk mendapatakan ketidakpastian_relatif
-    ketidakpastian_rel = delta_x / rerata_x
-
-    return delta_x, rerata_x, ketidakpastian_rel
 
 def main() :
     data = [2, 4, 6, 8, 10]
-    abs_u, mean, rel_u = ketidakpastian_relatif(data)
-    print(f"Δx (absolut) = {abs_u}")
-    print(f"Rata-rata = {mean}")
-    print(f"Δx_rel (relatif) = {rel_u}")
+    delta_x, rata_rata, delta_x_rel = hitung_ketidakpastian(data)
+    print(f"Data: {data}")
+    print(f"Ketidakpastian Absolut (Δx) = {delta_x:.4f}")
+    print(f"Rata-rata (x̄) = {rata_rata:.4f}")
+    print(f"Ketidakpastian Relatif = {delta_x_rel:.4f} atau {delta_x_rel:.2%}")
 
 if __name__ == "__main__":
     main()
