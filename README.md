@@ -59,7 +59,7 @@ Pastikan Anda telah menginstal Python di sistem Anda.
 2.  Buat _Branch_ Fitur baru (`git checkout -b fitur/NamaFiturBaru`)
 3.  _Commit_ perubahan Anda (`git commit -m 'Menambahkan fitur A, B, dan C'`)
 4.  _Push_ ke _Branch_ tersebut (`git push origin fitur/NamaFiturBaru`)
-5.  Buka sebuah _Pull Request_ ke branch `rumus-baru`, _Pull Request_ ke branch `main` tidak akan diterima
+5.  Buka sebuah _Pull Request_ ke branch `main`
 
 Kami juga menyarankan Anda untuk membaca `CONTRIBUTING.md` (jika ada) untuk panduan lebih detail.
 
