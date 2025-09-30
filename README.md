@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 align="center">Rum-us</h1>
+  <a href="https://agwaingit.github.io/rum-us/"><h1 align="center">Rum-us</h1></a>
   <p align="center">
     Proyek dimana rumus <strong>matematika</strong> dan <strong>fisika</strong> ditulis ulang ke dalam bahasa pemrograman <strong>Python</strong>.
     <br />
