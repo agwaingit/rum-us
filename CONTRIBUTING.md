@@ -47,7 +47,7 @@ Ini adalah cara terbaik untuk menambahkan rumus baru ke dalam koleksi.
 4.  Tambahkan atau ubah kode sesuai dengan Panduan Gaya Kode.
 5.  **Commit** perubahan Anda dengan pesan yang jelas (`git commit -m 'feat: Menambahkan implementasi rumus Pythagoras'`).
 6.  **Push** ke branch Anda (`git push origin fitur/rumus-pythagoras`).
-7.  Buka **Pull Request** ke branch `main` dari repositori `agwaingit/rum-us`.
+7.  Buka **Pull Request** ke branch `rumus-baru` dari repositori `agwaingit/rum-us`.
 
 ## Panduan Gaya Kode
 
