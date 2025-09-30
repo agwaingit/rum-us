@@ -1,2 +1,2 @@
-# rum-us
-Rumus matematika dan fisika ditulis ulang di Python
+## rum-us
+Rumus matematika dan fisika ditulis ulang di `Python`
