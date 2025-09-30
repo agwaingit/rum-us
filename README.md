@@ -1,7 +1,7 @@
 <div align="center">
   <h1 align="center">Rum-us</h1>
   <p align="center">
-    Sebuah proyek untuk menulis ulang berbagai rumus <strong>matematika</strong> dan <strong>fisika</strong> dalam bahasa pemrograman <strong>Python</strong>.
+    Proyek dimana rumus <strong>matematika</strong> dan <strong>fisika</strong> ditulis ulang ke dalam bahasa pemrograman <strong>Python</strong>.
     <br />
     <a href="https://github.com/agwaingit/rum-us/issues/new?assignees=&labels=bug&template=bug_report.md&title=">Laporkan Bug</a>
     ·
